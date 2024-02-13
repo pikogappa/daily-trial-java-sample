@@ -1,0 +1,7 @@
+name: Sample
+version: '1.0-SNAPSHOT'
+main: plugin.sample.Main
+api-version: '1.20'
+authors: [pikogappa]
+description: Sample code for firework
+website: https://twitter.com/pikogappa
