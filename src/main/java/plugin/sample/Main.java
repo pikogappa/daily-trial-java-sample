@@ -3,6 +3,7 @@ package plugin.sample;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,9 @@ public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
+
+        Exception exp = new Exception();
+        RuntimeException exp2 = new RuntimeException();
     }
 
 
@@ -65,7 +69,7 @@ public final class Main extends JavaPlugin implements Listener {
                 firework.setFireworkMeta(fireworkMeta);
             }
             Path path = Path.of("firework.txt");
-            Files.writeString(path, "たまーやー！！");
+            Files.writeString(path, "たまーやー！！", StandardOpenOption.APPEND);
             player.sendMessage(Files.readString(path));
         }
         count++;
